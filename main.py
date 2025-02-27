@@ -51,7 +51,7 @@ class MyPlugin(BasePlugin):
             ctx.add_return("reply", [f"hello, {ctx.event.sender_id}! The current time is {current_time}."])
 
             # 回复消息 "hello, everyone!"
-            ctx.add_return("reply",[msg_chain])
+            ctx.add_return("reply",msg_chain)
 
             # 阻止该事件默认行为（向接口获取回复）
             ctx.prevent_default()
