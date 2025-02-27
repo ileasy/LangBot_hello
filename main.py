@@ -1,6 +1,7 @@
 from pkg.plugin.context import register, handler, llm_func, BasePlugin, APIHost, EventContext
 from pkg.plugin.events import *  # 导入事件类
 from datetime import datetime 
+from pkg.platform.types import *
 
 # 注册插件
 @register(name="LangBot_Hello", description="发送hello机器人回复", version="0.1", author="iLeasy")
