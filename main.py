@@ -41,7 +41,7 @@ class MyPlugin(BasePlugin):
     async def group_normal_message_received(self, ctx: EventContext):
         msg = ctx.event.text_message  # 这里的 event 即为 GroupNormalMessageReceived 的对象
         msg_chain = MessageChain([
-            At(kif00pjoz5gw22),
+            At(wxid_kif00pjoz5gw22),
             Plain("Hello LangBot"),
             Image(url='https://qchatgpt.rockchin.top/langbot-logo.png')
         ])
