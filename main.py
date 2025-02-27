@@ -39,6 +39,10 @@ class MyPlugin(BasePlugin):
     @handler(GroupNormalMessageReceived)
     async def group_normal_message_received(self, ctx: EventContext):
         msg = ctx.event.text_message  # 这里的 event 即为 GroupNormalMessageReceived 的对象
+        msg_chain = MessageChain([
+            Plain("Hello LangBot"),
+            Image(url='https://qchatgpt.rockchin.top/langbot-logo.png')
+        ])
         if msg == "hello":  # 如果消息为hello
             
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -46,7 +50,7 @@ class MyPlugin(BasePlugin):
             ctx.add_return("reply", [f"hello, {ctx.event.sender_id}! The current time is {current_time}."])
 
             # 回复消息 "hello, everyone!"
-            ctx.add_return("reply", ["hello, everyone!"])
+            ctx.add_return("reply",[msg_chain])
 
             # 阻止该事件默认行为（向接口获取回复）
             ctx.prevent_default()
