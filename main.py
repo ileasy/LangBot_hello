@@ -48,7 +48,7 @@ class MyPlugin(BasePlugin):
             
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             # 输出调试信息
-            ctx.add_return("reply", [f"hello, {ctx.event.sender_id}! The current time is {current_time}."])
+            ctx.add_return("reply", [f"hello, {ctx.event.sender_id}! The current time is {msg_chain}."])
 
             # 回复消息 "hello, everyone!"
             ctx.add_return("reply",msg_chain)
